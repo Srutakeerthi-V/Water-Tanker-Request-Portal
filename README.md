@@ -1,3 +1,4 @@
+
 # AquaReach — Water Tanker Request Portal
 
 A responsive EWP mini-project built with **Node.js, Express, HTML, CSS, and vanilla JavaScript**. It has a polished landing page, a water tanker request form, request tracking, and an admin dashboard.
@@ -101,3 +102,4 @@ git push -u origin main
 - **JSON persistence:** stores demo requests in `data/requests.json`; a database such as MongoDB can replace it later.
 - **Validation:** checks required fields, contact number, tanker quantity, priority, and delivery date on the server.
 - **Frontend:** HTML structures the page, CSS handles responsive styling, and JavaScript calls the Express API with `fetch()`.
+
