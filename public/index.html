@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b6bcb" />
+  <meta name="description" content="Request a water tanker, track delivery, and help your community get reliable water access." />
+  <title>AquaReach — Water Tanker Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> Community water support, made simple <span class="announcement-right">Need help? <a href="#contact">Contact support ↗</a></span></div>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-icon">≈</span><span>Aqua<span>Reach</span><small>WATER SERVICES PORTAL</small></span></a>
+    <nav><a href="#how-it-works">How it works</a><a href="#track">Track request</a><a href="#contact">Contact</a></nav>
+    <button class="btn btn-primary btn-small" data-scroll="#request">Request a tanker <span>↗</span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> WATER WHEN YOU NEED IT</div>
+        <h1>Every drop<br>counts. <span>We deliver.</span></h1>
+        <p class="hero-description">A simpler way to request water tankers for your home, apartment, or community. Submit a request and follow every step, all in one place.</p>
+        <div class="hero-actions"><button class="btn btn-primary" data-scroll="#request">Request water now <span>↗</span></button><button class="btn btn-quiet" data-scroll="#how-it-works"><span class="play-icon">▶</span> How it works</button></div>
+        <div class="trust-row"><div class="avatar-stack"><span>R</span><span>M</span><span>S</span><span>+</span></div><div><strong>Built for your community</strong><small>Clear updates. Reliable coordination.</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-glow"></div><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+        <div class="water-drop">≈</div>
+        <div class="truck-scene">
+          <div class="truck-tank"><div class="tank-shine"></div><span>PURE<br>WATER</span></div>
+          <div class="truck-cab"><div class="cab-window"></div><div class="cab-grill"></div></div>
+          <div class="truck-base"></div><div class="wheel wheel-one"><i></i></div><div class="wheel wheel-two"><i></i></div>
+          <div class="water-wave wave-one"></div><div class="water-wave wave-two"></div>
+        </div>
+        <div class="floating-card card-delivery"><span class="mini-check">✓</span><div><strong>Request tracking</strong><small>Updates at every step</small></div></div>
+        <div class="floating-card card-water"><span class="drop-mini">♧</span><div><strong>Water access</strong><small>For every neighborhood</small></div></div>
+        <div class="art-caption"><span>01 / COMMUNITY FIRST</span><span>Making water access easier →</span></div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><span class="stat-icon">◉</span><p><strong>Easy requests</strong><small>Submit in a few minutes</small></p></div>
+      <div><span class="stat-icon">⌁</span><p><strong>Live status updates</strong><small>Know where things stand</small></p></div>
+      <div><span class="stat-icon">♡</span><p><strong>Community focused</strong><small>Water access, simplified</small></p></div>
+    </section>
+
+    <section class="section request-section" id="request">
+      <div class="section-heading"><div><div class="eyebrow">GET STARTED</div><h2>Request a water tanker<span>.</span></h2><p>Tell us what you need. We'll help you take it from here.</p></div><div class="step-pill"><span>01</span> Request details</div></div>
+      <div class="form-layout">
+        <form id="requestForm" class="panel request-form">
+          <div class="form-top"><div><h3>Delivery details</h3><p>Fields marked with * are required.</p></div><span class="secure-label">♧ Your details stay private</span></div>
+          <div class="form-grid">
+            <label>Full name *<input name="name" required maxlength="80" placeholder="e.g. Priya Sharma" /></label>
+            <label>Contact number *<input name="phone" required inputmode="tel" maxlength="18" placeholder="+91 98765 43210" /></label>
+            <label class="full">Delivery address *<input name="address" required maxlength="200" placeholder="House / apartment, street name" /></label>
+            <label>Area / locality *<input name="area" required maxlength="100" placeholder="e.g. Madhapur" /></label>
+            <label>Preferred delivery date *<input name="date" id="deliveryDate" type="date" required /></label>
+            <label>Number of tankers *<select name="quantity" required><option value="1">1 tanker</option><option value="2">2 tankers</option><option value="3">3 tankers</option><option value="4">4 tankers</option><option value="5">5 tankers</option><option value="6">6 tankers</option><option value="7">7 tankers</option><option value="8">8 tankers</option><option value="9">9 tankers</option><option value="10">10 tankers</option></select></label>
+            <label>Priority *<select name="urgency" required><option value="Normal">Normal — scheduled</option><option value="Urgent">Urgent — within 24 hours</option><option value="Emergency">Emergency — critical need</option></select></label>
+            <label class="full">Additional instructions <textarea name="notes" rows="3" maxlength="500" placeholder="Landmark, access instructions, or anything we should know…"></textarea></label>
+          </div>
+          <div class="form-footer"><span><span class="required-star">*</span> Please check your details before submitting.</span><button class="btn btn-primary" type="submit" id="submitBtn">Submit request <span>↗</span></button></div>
+          <div class="form-message" id="formMessage" role="status"></div>
+        </form>
+        <aside class="side-column">
+          <div class="help-card"><span class="help-icon">✳</span><h3>Water shouldn't be a worry.</h3><p>Whether it's for your household or your whole community, we're here to make requesting water straightforward.</p><div class="help-line"></div><div class="help-feature"><span>✓</span> Simple online request</div><div class="help-feature"><span>✓</span> Unique tracking ID</div><div class="help-feature"><span>✓</span> Clear delivery status</div></div>
+          <div class="tip-card"><span class="tip-icon">i</span><div><strong>Good to know</strong><p>Keep your tracking ID after submitting. You can use it anytime to check your request status.</p></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="track-section" id="track"><div class="track-inner"><div class="track-copy"><div class="eyebrow light">STAY IN THE LOOP</div><h2>Your request.<br><span>Your updates.</span></h2><p>Already requested a tanker? Enter your tracking ID to see the latest status and delivery progress.</p><div class="track-points"><span>✓ No account needed</span><span>✓ Updates in one place</span></div></div><div class="track-box"><div class="track-box-icon">⌕</div><h3>Track your request</h3><p>Enter the ID you received after submitting.</p><form id="trackForm" class="track-input-row"><input id="trackingId" required placeholder="e.g. WT-MB123-ABCD" aria-label="Tracking ID"><button class="btn btn-light" type="submit">Track <span>→</span></button></form><div id="trackingResult" class="tracking-result" aria-live="polite"></div><div class="track-example">Your ID starts with <b>WT-</b> and is unique to your request.</div></div></div></section>
+
+    <section class="section process-section" id="how-it-works"><div class="section-heading centered"><div><div class="eyebrow">A CLEARER PROCESS</div><h2>From request to delivery<span>.</span></h2><p>Three simple steps. Less uncertainty.</p></div></div><div class="process-grid"><article class="process-card"><span class="process-number">01</span><div class="process-icon blue">↗</div><h3>Submit a request</h3><p>Share your location, preferred date, and how many tankers you need.</p><span class="process-bottom">TAKES A FEW MINUTES <span>↗</span></span></article><article class="process-card"><span class="process-number">02</span><div class="process-icon aqua">⌁</div><h3>Follow your status</h3><p>Use your tracking ID to check whether your request is pending, approved, or assigned.</p><span class="process-bottom">STAY INFORMED <span>↗</span></span></article><article class="process-card"><span class="process-number">03</span><div class="process-icon yellow">✓</div><h3>Receive your water</h3><p>Watch your request move through delivery until it is marked complete.</p><span class="process-bottom">DELIVERY CONFIRMED <span>↗</span></span></article></div></section>
+
+    <section class="contact-strip" id="contact"><div class="contact-mark">≈</div><div><h3>Have a question?</h3><p>For your EWP demo, add your institution's official contact details here.</p></div><a href="mailto:waterhelp@example.com">Contact support <span>↗</span></a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-icon">≈</span><span>Aqua<span>Reach</span><small>WATER SERVICES PORTAL</small></span></a><span>Designed for easier community water access.</span><span>© <span id="year"></span> AquaReach</span><button class="admin-link" id="adminOpen">Admin sign in</button></footer>
+
+  <div class="modal-backdrop" id="adminModal" aria-hidden="true"><section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><button class="modal-close" id="adminClose" aria-label="Close">×</button><div class="eyebrow">PORTAL MANAGEMENT</div><h2 id="adminTitle">Admin dashboard</h2><p class="modal-intro">Sign in to review requests and update delivery status.</p><form id="adminLoginForm"><label>Admin password<input type="password" id="adminPassword" required placeholder="Enter admin password"></label><button class="btn btn-primary full-btn" type="submit">Sign in <span>→</span></button></form><div id="adminMessage" class="form-message"></div><div id="adminDashboard" class="admin-dashboard hidden"><div class="admin-stats" id="adminStats"></div><div class="admin-toolbar"><h3>All requests</h3><button id="adminRefresh" class="btn btn-outline btn-small">Refresh ↻</button></div><div id="adminRequests" class="admin-requests"></div><button id="adminLogout" class="btn btn-quiet logout-btn">Sign out</button></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
